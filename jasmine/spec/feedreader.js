@@ -116,15 +116,14 @@ $(function() {
             loadFeed(0, function(){
                 // Get the first feed
                 firstFeedContainer = $('.feed').html();
-                // Load the second feed
-                loadFeed(1, function(){
-                    done();
-                });
+            });           
+            loadFeed(1, function(){
+                // Get second feed
+                secondFeedContainer = $('.feed').html();
+                done();
             });
         });
         it('loaded', function (done) {
-            // Get second feed
-            secondFeedContainer = $('.feed').html();
             // Compare the first and the second feeds' content
             expect(firstFeedContainer).not.toBe(secondFeedContainer);
             done();
